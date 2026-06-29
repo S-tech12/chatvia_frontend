@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e1e4",
+                        "inverse-surface": "#e5e1e4",
+                        "tertiary": "#ffb4aa",
+                        "outline": "#9d8ba0",
+                        "surface": "#131315",
+                        "surface-container-low": "#1c1b1d",
+                        "on-tertiary": "#690003",
+                        "primary": "#ebb2ff",
+                        "secondary": "#bdf4ff",
+                        "inverse-primary": "#9800d0",
+                        "surface-container": "#201f21",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-primary-container": "#ffffff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ebb2ff",
+                        "on-primary-fixed-variant": "#74009f",
+                        "on-background": "#e5e1e4",
+                        "surface-dim": "#131315",
+                        "surface-variant": "#353437",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "background": "#131315",
+                        "inverse-on-surface": "#313032",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#f8d8ff",
+                        "on-tertiary-fixed": "#410001",
+                        "on-surface-variant": "#d4c0d7",
+                        "on-primary": "#520072",
+                        "primary-container": "#bc13fe",
+                        "surface-tint": "#ebb2ff",
+                        "on-primary-fixed": "#320047",
+                        "surface-container-high": "#2a2a2c",
+                        "on-tertiary-fixed-variant": "#930005",
+                        "surface-bright": "#39393b",
+                        "surface-container-highest": "#353437",
+                        "tertiary-container": "#e62721",
+                        "on-secondary": "#00363d",
+                        "on-secondary-container": "#00616d",
+                        "secondary-fixed": "#9cf0ff",
+                        "outline-variant": "#504254",
+                        "on-tertiary-container": "#140000",
+                        "on-secondary-fixed": "#001f24",
+                        "secondary-container": "#00e3fd",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdad5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "panel-width-sm": "320px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "panel-width-md": "400px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-md-mobile": ["Outfit"],
+                        "label-bold": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0C;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(188, 19, 254, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(0, 227, 253, 0.1) 0%, transparent 40%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(235, 178, 255, 0.4), transparent);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+        }
+
+        .inner-glow {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(50px, 100px) scale(1.2);
+            }
+        }
+
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/30">
+    <!-- Background Orbs -->
+    <div class="floating-orb w-96 h-96 bg-primary-container top-[-10%] left-[-10%]"></div>
+    <div class="floating-orb w-[500px] h-[500px] bg-secondary-container bottom-[-20%] right-[-10%]"
+        style="animation-delay: -5s;"></div>
+    <!-- Login Container -->
+    <main class="w-full max-w-[440px] px-margin-mobile md:px-0 z-10">
+        <div class="glass-card rounded-[32px] p-8 md:p-10 flex flex-col items-center">
+            <!-- Logo Section -->
+            <div class="mb-10 text-center">
+                <div
+                    class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-container/20 border border-primary/30 mb-6 group">
+                    <span
+                        class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform duration-500"
+                        data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                </div>
+                <h1 class="font-display-lg text-primary tracking-tight mb-2">Chatvia</h1>
+                <p class="font-body-md text-on-surface-variant">Step into the future of messaging.</p>
+            </div>
+            <!-- Login Form -->
+            <form class="w-full space-y-6" onsubmit="event.preventDefault();">
+                <!-- Email Field -->
+                <div class="space-y-2">
+                    <label class="font-label-bold text-label-bold text-on-surface-variant ml-1" for="email">Email
+                        Address</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-on-surface-variant group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+                        </div>
+                        <input autocomplete="off" class="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl py-3.5 pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 transition-all duration-300 backdrop-blur-md"
+                            id="email" placeholder="name@example.com" type="email" />
+                    </div>
+                </div>
+                <!-- Password Field -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center ml-1">
+                        <label class="font-label-bold text-label-bold text-on-surface-variant"
+                            for="password">Password</label>
+                        <a class="text-label-sm font-label-sm text-primary hover:text-primary-fixed-dim transition-colors"
+                            href="#">Forgot password?</a>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-on-surface-variant group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+                        </div>
+                        <input autocomplete="off" class="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl py-3.5 pl-12 pr-12 text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 transition-all duration-300 backdrop-blur-md"
+                            id="password" placeholder="••••••••" type="password" />
+                        <button
+                            class="absolute inset-y-0 right-4 flex items-center text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer tap-highlight-transparent"
+                            id="togglePassword" type="button">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="visibility"
+                                id="eyeIcon">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Remember Me -->
+                <div class="flex items-center space-x-3 ml-1">
+                    <div class="relative flex items-center">
+                        <input autocomplete="off" class="w-5 h-5 rounded border-outline-variant/30 bg-surface-container-low text-primary focus:ring-primary/40 focus:ring-offset-surface transition-all cursor-pointer"
+                            id="remember" type="checkbox" />
+                    </div>
+                    <label class="font-label-sm text-label-sm text-on-surface-variant cursor-pointer select-none"
+                        for="remember">Keep me logged in</label>
+                </div>
+                <!-- CTA Button -->
+                <button
+                    class="w-full bg-primary-container text-on-primary-container font-label-bold text-label-bold py-4 rounded-xl inner-glow neon-glow hover:brightness-110 active:scale-[0.98] transition-all duration-200 mt-2">
+                    Login
+                </button>
+                <!-- Footer Links -->
+                <div class="pt-4 text-center">
+                    <p class="font-body-md text-on-surface-variant">
+                        Don't have an account?
+                        <a class="text-primary font-bold hover:underline underline-offset-4 decoration-primary/40 ml-1 transition-all"
+                            href="#">Sign up</a>
+                    </p>
+                </div>
+            </form>
+            <!-- Social Login Divider -->
+            <div class="w-full flex items-center gap-4 my-8">
+                <div class="flex-1 h-[1px] bg-outline-variant/20"></div>
+                <span class="text-label-sm font-label-sm text-on-surface-variant/60 uppercase tracking-widest">or
+                    continue with</span>
+                <div class="flex-1 h-[1px] bg-outline-variant/20"></div>
+            </div>
+            <!-- Social Buttons -->
+            <div class="grid grid-cols-2 gap-4 w-full">
+                <button
+                    class="flex items-center justify-center gap-3 py-3 rounded-xl bg-surface-container/50 border border-outline-variant/20 hover:bg-surface-variant/30 transition-all duration-300">
+                    <img alt="Google Logo" class="w-5 h-5"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNCQx97Oo3T5MKCn5QhjoflgQ-TkfFK17c-SMLR06rDH-6qHQpNf6Tvw6I2o0oJX-6zKNBRY9yG62ZajgPHjX1O7gpsouVblFAAjfiE7n18o8CjGQt64AaG8hRZuoAyZlkloFwimiCNSmHm957zHI0zLu51UPpKwcKyc7D20gnRKQz34WtZE9bBgf21f6CHzny5EX8Op9fu5rpozbDGgUhpTsy4FjiYZr4nGUHIlc1l4QXWlxMWt4a6TuP5jEUw7u30-zulm9LsWU2" />
+                    <span class="font-label-bold text-label-bold">Google</span>
+                </button>
+                <button
+                    class="flex items-center justify-center gap-3 py-3 rounded-xl bg-surface-container/50 border border-outline-variant/20 hover:bg-surface-variant/30 transition-all duration-300">
+                    <span class="material-symbols-outlined text-white" data-icon="apple"
+                        style="font-variation-settings: 'FILL' 1;">ios</span>
+                    <span class="font-label-bold text-label-bold">Apple</span>
+                </button>
+            </div>
+        </div>
+        <!-- System Status -->
+        <div class="mt-8 flex justify-center items-center gap-6 text-label-sm font-label-sm text-on-surface-variant/40">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#00daf3] animate-pulse"></span>
+                <span>System Online</span>
+            </div>
+            <div class="w-1 h-1 rounded-full bg-outline-variant/40"></div>
+            <span>v2.4.0-premium</span>
+        </div>
+    </main>
+    <script>
+        // Password Visibility Toggle
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.getElementById('togglePassword');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        toggleButton.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+
+            // Add a little pop animation
+            eyeIcon.classList.add('scale-125');
+            setTimeout(() => eyeIcon.classList.remove('scale-125'), 150);
+        });
+
+        // Atmospheric Micro-interaction: Mouse move parallax for background orbs
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.floating-orb');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            orbs.forEach((orb, index) => {
+                const speed = (index + 1) * 20;
+                orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+
+</html>

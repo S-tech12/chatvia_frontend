@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chatvia - Profile Setup</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="ProfileSetup.css">
+    <link rel="stylesheet" href="../responsive_code/profile-setup-responsive.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e1e4",
+                        "inverse-surface": "#e5e1e4",
+                        "tertiary": "#ffb4aa",
+                        "outline": "#9d8ba0",
+                        "surface": "#131315",
+                        "surface-container-low": "#1c1b1d",
+                        "on-tertiary": "#690003",
+                        "primary": "#ebb2ff",
+                        "secondary": "#bdf4ff",
+                        "inverse-primary": "#9800d0",
+                        "surface-container": "#201f21",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "secondary-fixed-dim": "#00daf3",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-primary-container": "#ffffff",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ebb2ff",
+                        "on-primary-fixed-variant": "#74009f",
+                        "on-background": "#e5e1e4",
+                        "surface-dim": "#131315",
+                        "surface-variant": "#353437",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "background": "#131315",
+                        "inverse-on-surface": "#313032",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#f8d8ff",
+                        "on-tertiary-fixed": "#410001",
+                        "on-surface-variant": "#d4c0d7",
+                        "on-primary": "#520072",
+                        "primary-container": "#bc13fe",
+                        "surface-tint": "#ebb2ff",
+                        "on-primary-fixed": "#320047",
+                        "surface-container-high": "#2a2a2c",
+                        "on-tertiary-fixed-variant": "#930005",
+                        "surface-bright": "#39393b",
+                        "surface-container-highest": "#353437",
+                        "tertiary-container": "#e62721",
+                        "on-secondary": "#00363d",
+                        "on-secondary-container": "#00616d",
+                        "secondary-fixed": "#9cf0ff",
+                        "outline-variant": "#504254",
+                        "on-tertiary-container": "#140000",
+                        "on-secondary-fixed": "#001f24",
+                        "secondary-container": "#00e3fd",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdad5",
+                        "border_glass": "rgba(255, 255, 255, 0.1)"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "panel-width-sm": "320px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "panel-width-md": "400px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-md-mobile": ["Outfit"],
+                        "label-bold": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="flex items-center justify-center p-margin-mobile md:p-margin-desktop font-body-md text-on-surface">
+    <!-- Main Container -->
+    <main class="w-full max-w-[600px] flex flex-col items-center">
+        <!-- Header Section -->
+        <header class="text-center mb-10 space-y-2">
+            <h1 class="font-display-lg text-headline-md-mobile md:text-display-lg text-primary tracking-tight">Chatvia
+                Chat</h1>
+            <p class="font-body-lg text-on-surface-variant">Set up your digital presence</p>
+        </header>
+        <!-- Onboarding Card -->
+        <section class="glass-panel w-full p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden">
+            <!-- Asymmetric Glow Detail -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 blur-[80px] rounded-full"></div>
+            <div class="relative z-10 flex flex-col items-center gap-y-10">
+                <!-- Profile Image Upload Area -->
+                <div class="relative group cursor-pointer">
+                    <label class="cursor-pointer block relative" for="ProfilePic">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-primary overflow-hidden bg-surface-container-highest relative flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:border-secondary shadow-lg"
+                            id="avatar-container">
+                            <img alt="Default Avatar"
+                                class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-40"
+                                id="avatar-preview" src="Default_Image.jpg" />
+                            <!-- Hover Overlay -->
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface/40 backdrop-blur-sm">
+                                <span class="material-symbols-outlined text-secondary text-4xl mb-1">add_a_photo</span>
+                                <span class="font-label-sm text-secondary">Change</span>
+                            </div>
+                        </div>
+                        <!-- Status Indicator Overlay (Online) -->
+                        <div
+                            class="absolute bottom-2 right-2 w-6 h-6 bg-surface-container rounded-full flex items-center justify-center border-2 border-surface">
+                            <div class="w-3 h-3 bg-secondary-fixed-dim rounded-full pulse-online"></div>
+                        </div>
+                    </label>
+                    <input autocomplete="off" accept="image/*" class="hidden" id="ProfilePic" onchange="previewImage(event)" type="file" />
+                </div>
+                <!-- Form Content -->
+                <div class="w-full space-y-6">
+                    <!-- Display Name Field -->
+                    <div class="space-y-2">
+                        <label class="font-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Display
+                            Name</label>
+                        <input autocomplete="off" id="Nickname"
+                            class="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-on-surface-variant/40 font-body-md"
+                            placeholder="Enter your name" type="text" required />
+                    </div>
+                    <!-- DOB Field -->
+                    <div class="space-y-2">
+                        <label class="font-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Date of
+                            Birth</label>
+                        <input autocomplete="off" id="DOB"
+                            class="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-on-surface-variant/40 font-body-md"
+                            placeholder="Enter your DOB" type="date" required />
+                    </div>
+                    <!-- Bio/Status Field -->
+                    <div class="space-y-2">
+                        <label class="font-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Bio /
+                            Status</label>
+                        <textarea id="bio"
+                            class="w-full bg-surface-container-low/50 border border-outline-variant/30 rounded-xl px-4 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-on-surface-variant/40 font-body-md resize-none"
+                            placeholder="Tell the world something about yourself..." rows="3" required></textarea>
+                    </div>
+                </div>
+                <!-- Action Button -->
+                <button id="UpdateButton"
+                    class="w-full py-5 bg-secondary-fixed-dim text-on-secondary font-title-sm rounded-2xl primary-glow active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-x-2 group">
+                    <span>Complete Setup</span>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+                <button id="skipBtn"
+                    class="font-label-sm text-on-surface-variant/60 hover:text-on-surface transition-colors cursor-pointer">
+                    Skip for now
+                </button>
+            </div>
+        </section>
+        <!-- Footer / Branding -->
+        <footer class="mt-8 flex items-center gap-x-4 opacity-40">
+            <div class="h-[1px] w-12 bg-on-surface-variant"></div>
+            <span class="font-label-sm uppercase tracking-[0.2em]">Encrypted • Chatvia OS</span>
+            <div class="h-[1px] w-12 bg-on-surface-variant"></div>
+        </footer>
+    </main>
+    <!-- Micro-interaction JS -->
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('avatar-preview');
+            const container = document.getElementById('avatar-container');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    // Flash animation on update
+                    container.classList.add('scale-110', 'border-secondary');
+                    setTimeout(() => {
+                        container.classList.remove('scale-110');
+                    }, 200);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        const btn = document.getElementById('UpdateButton');
+        if (btn) {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+        }
+    </script>
+
+    <!-- Link to JS files -->
+    <script src="../constant.js"></script>
+    <script src="ProfileSetup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

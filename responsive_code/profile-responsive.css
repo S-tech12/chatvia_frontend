@@ -1,0 +1,32 @@
+/* responsive_code/profile-responsive.css */
+@media (max-width: 768px) {
+    /* Main container padding */
+    main {
+        padding-top: 6rem !important; /* give space for mobile header */
+        padding-bottom: 2rem !important;
+    }
+    
+    .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .border_glass {
+        padding: 1.5rem !important;
+    }
+
+    /* Stack buttons in danger zone */
+    .md\:flex-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .gap-4 > button {
+        width: 100% !important;
+    }
+
+    /* Adjust avatar size slightly */
+    .w-32 {
+        width: 100px !important;
+        height: 100px !important;
+    }
+}

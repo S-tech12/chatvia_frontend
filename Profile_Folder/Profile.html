@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Chatvia | User Profile &amp; Settings</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="../responsive_code/profile-responsive.css">
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#e5e1e4",
+            "inverse-surface": "#e5e1e4",
+            "tertiary": "#ffb4aa",
+            "outline": "#9d8ba0",
+            "surface": "#131315",
+            "surface-container-low": "#1c1b1d",
+            "on-tertiary": "#690003",
+            "primary": "#ebb2ff",
+            "secondary": "#bdf4ff",
+            "inverse-primary": "#9800d0",
+            "surface-container": "#201f21",
+            "on-secondary-fixed-variant": "#004f58",
+            "secondary-fixed-dim": "#00daf3",
+            "surface-container-lowest": "#0e0e10",
+            "on-primary-container": "#ffffff",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#ebb2ff",
+            "on-primary-fixed-variant": "#74009f",
+            "on-background": "#e5e1e4",
+            "surface-dim": "#131315",
+            "surface-variant": "#353437",
+            "tertiary-fixed-dim": "#ffb4aa",
+            "background": "#131315",
+            "inverse-on-surface": "#313032",
+            "on-error-container": "#ffdad6",
+            "error": "#ffb4ab",
+            "primary-fixed": "#f8d8ff",
+            "on-tertiary-fixed": "#410001",
+            "on-surface-variant": "#d4c0d7",
+            "on-primary": "#520072",
+            "primary-container": "#bc13fe",
+            "surface-tint": "#ebb2ff",
+            "on-primary-fixed": "#320047",
+            "surface-container-high": "#2a2a2c",
+            "on-tertiary-fixed-variant": "#930005",
+            "surface-bright": "#39393b",
+            "surface-container-highest": "#353437",
+            "tertiary-container": "#e62721",
+            "on-secondary": "#00363d",
+            "on-secondary-container": "#00616d",
+            "secondary-fixed": "#9cf0ff",
+            "outline-variant": "#504254",
+            "on-tertiary-container": "#140000",
+            "on-secondary-fixed": "#001f24",
+            "secondary-container": "#00e3fd",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#ffdad5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "panel-width-sm": "320px",
+            "margin-desktop": "40px",
+            "unit": "8px",
+            "margin-mobile": "20px",
+            "gutter": "16px",
+            "panel-width-md": "400px"
+          },
+          "fontFamily": {
+            "title-sm": ["Outfit"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Outfit"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Outfit"],
+            "body-md": ["Inter"],
+            "headline-md-mobile": ["Outfit"],
+            "label-bold": ["Inter"]
+          },
+          "fontSize": {
+            "title-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="text-on-surface antialiased overflow-hidden">
+  <!-- Top AppBar (Mobile Only Anchor) -->
+  <header
+    class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-outline-variant/20 flex items-center h-16 px-margin-mobile md:hidden">
+    <a href="../Chatroom/Chatroom.html" class="flex items-center text-primary cursor-pointer active:scale-95 duration-200 mr-4">
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="ml-1 font-label-bold">Back</span>
+    </a>
+    <h1 class="font-display-lg text-primary tracking-tight text-[20px] flex-1">Profile</h1>
+    <div class="flex gap-4">
+      <span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200"
+        data-icon="notifications">notifications</span>
+    </div>
+  </header>
+  <div class="flex h-screen w-full">
+    <!-- Side Navigation Bar (Desktop) -->
+    <nav
+      class="h-screen w-panel-width-sm hidden md:flex flex-col bg-surface-container-low/30 backdrop-blur-lg border-r border-outline-variant/10 shadow-2xl shadow-primary/5 py-8 gap-y-4 shrink-0">
+      <div class="px-8 mb-6">
+        <h2 class="font-headline-md text-primary mb-1">Chatvia</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-70">Premium Messaging</p>
+      </div>
+      <div class="flex flex-col gap-y-1 pr-4">
+        <a class="flex items-center gap-4 px-8 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/20 transition-all cursor-pointer group"
+          href="../Chatroom/Chatroom.html">
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+            data-icon="forum">forum</span>
+          <span class="font-body-md text-body-md">Messages</span>
+        </a>
+        <a class="flex items-center gap-4 px-8 py-3 bg-primary/20 text-primary border-r-4 border-primary rounded-r-lg transition-all cursor-pointer group"
+          href="#">
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+            data-icon="settings">settings</span>
+          <span class="font-body-md text-body-md">Settings</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content Canvas -->
+    <main class="flex-grow h-screen overflow-y-auto pt-20 md:pt-0 pb-24 md:pb-0 scroll-smooth">
+      <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop py-12">
+        <!-- Header Section -->
+        <header class="mb-12">
+          <h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-2">Account Settings
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Manage your profile visibility and app
+            preferences.</p>
+        </header>
+
+        <!-- Profile Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Avatar Card -->
+          <section
+            class="md:col-span-1 border_glass glass-gradient backdrop-blur-2xl rounded-xl p-8 flex flex-col items-center justify-center text-center">
+            <div class="relative mb-6">
+              <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-primary/30 p-1">
+                <img alt="User Profile" id="profilePic" class="w-full h-full object-cover rounded-full" src="" />
+              </div>
+              <button id="editProfilePicBtn"
+                class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform">
+                <span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+              </button>
+              <div
+                class="absolute -top-1 -right-1 w-5 h-5 bg-secondary-fixed-dim rounded-full neon-pulse border-4 border-surface">
+              </div>
+            </div>
+            <h3 class="font-title-sm text-title-sm mb-1" id="fullname">Loading...</h3>
+            <p class="font-label-sm text-label-sm text-secondary-fixed-dim tracking-wide uppercase"></p>
+          </section>
+
+          <!-- Profile Details Card -->
+          <section class="md:col-span-2 border_glass glass-gradient backdrop-blur-2xl rounded-xl p-8">
+            <div class="space-y-4">
+              <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">Display Name</label>
+                <input autocomplete="off" type="text" id="username" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">Email</label>
+                <input autocomplete="off" type="email" id="userEmailId" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">Phone Number</label>
+                <div id="UserMobileNo"
+                  class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md opacity-70">
+                </div>
+              </div>
+              <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">Date of Birth</label>
+                <div id="UserDOB"
+                  class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md opacity-70">
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <label class="block font-label-bold text-label-bold text-primary mb-1">Created At</label>
+                  <div id="UserCreatedAt"
+                    class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md opacity-70">
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <label class="block font-label-bold text-label-bold text-primary mb-1">Updated At</label>
+                  <div id="UserUpdatedAt"
+                    class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md opacity-70">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">Bio</label>
+                <textarea id="bio" rows="3" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors resize-none"></textarea>
+              </div>
+              
+              <div class="flex gap-4 flex-col md:flex-row mt-6">
+                <div class="flex-1">
+                  <label class="block font-label-bold text-label-bold text-primary mb-1">New Password (Optional)</label>
+                  <input autocomplete="off" type="password" id="newPassword" placeholder="Leave empty to keep unchanged" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors" />
+                </div>
+                <div class="flex-1">
+                  <label class="block font-label-bold text-label-bold text-primary mb-1">Confirm New Password</label>
+                  <input autocomplete="off" type="password" id="confirmPassword" placeholder="Confirm new password" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors" />
+                </div>
+              </div>
+              
+              <div class="pt-6">
+                  <button id="saveChangesBtn" class="w-full px-8 py-3 bg-primary text-on-primary rounded-lg transition-all font-label-bold text-label-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95">Save Changes</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Account Termination (High Contrast) -->
+          <section
+            class="md:col-span-3 border_glass glass-gradient backdrop-blur-2xl rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-red-500/20">
+            <div>
+              <h4 class="font-title-sm text-title-sm text-error mb-1">Danger Zone</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">Manage your account access or permanently
+                delete your account.</p>
+            </div>
+            <div class="flex gap-4 w-full md:w-auto">
+              <button id="LogoutButton"
+                class="flex-1 md:flex-none px-8 py-3 border border-outline-variant hover:bg-surface-variant/30 rounded-lg transition-all font-label-bold text-label-bold active:scale-95">
+                Logout
+              </button>
+              <button id="DeleteAccountButton"
+                class="flex-1 md:flex-none px-8 py-3 bg-error hover:bg-error-container text-on-error rounded-lg transition-all font-label-bold text-label-bold shadow-lg shadow-error/20 active:scale-95">
+                Delete Account
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Profile Image Upload Modal -->
+  <div id="profileImageModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-background/80 backdrop-blur-sm p-4">
+    <div class="bg-surface-container border border-outline-variant/30 rounded-2xl p-8 max-w-md w-full shadow-2xl relative animate-[fadeIn_0.3s_ease-out]">
+        <button id="closeImageModalBtn" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <h3 class="font-headline-md text-[24px] text-primary mb-2">Update Profile Picture</h3>
+        <p class="font-body-md text-on-surface-variant mb-6">Choose a new image to represent yourself.</p>
+        
+        <div class="flex flex-col items-center justify-center border-2 border-dashed border-outline-variant/50 rounded-xl p-8 hover:border-primary/50 transition-colors cursor-pointer" id="imageUploadArea">
+            <span class="material-symbols-outlined text-[48px] text-primary/50 mb-4">cloud_upload</span>
+            <p class="font-label-bold text-on-surface">Click to browse or drag image here</p>
+            <input autocomplete="off" type="file" id="profileImageInput" accept="image/*" class="hidden">
+        </div>
+        
+        <div id="imagePreviewContainer" class="hidden mt-4 flex-col items-center">
+            <img id="imagePreview" src="" class="w-32 h-32 object-cover rounded-full border-2 border-primary/50">
+        </div>
+        
+        <button id="uploadImageBtn" class="w-full mt-6 px-8 py-3 bg-primary text-on-primary rounded-lg transition-all font-label-bold text-label-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+            Upload Image
+        </button>
+    </div>
+  </div>
+
+  <!-- OTP Verification Modal -->
+  <div id="otpVerificationModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-background/80 backdrop-blur-sm p-4">
+    <div class="bg-surface-container border border-outline-variant/30 rounded-2xl p-8 max-w-md w-full shadow-2xl relative animate-[fadeIn_0.3s_ease-out]">
+        <button id="closeOtpModalBtn" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <h3 class="font-headline-md text-[24px] text-primary mb-2">Security Verification</h3>
+        <p class="font-body-md text-on-surface-variant mb-6">Enter your current password and the 6-digit OTP sent to your email to confirm these changes.</p>
+        
+        <div class="space-y-4">
+            <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">Current Password</label>
+                <input autocomplete="off" type="password" id="verifyCurrentPassword" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors" placeholder="Enter current password">
+            </div>
+            <div>
+                <label class="block font-label-bold text-label-bold text-primary mb-1">6-Digit OTP</label>
+                <input autocomplete="off" type="text" id="verifyOtpInput" maxlength="6" class="w-full bg-surface-variant/30 border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface font-body-md focus:border-primary/50 focus:outline-none transition-colors text-center text-xl tracking-[0.5em]" placeholder="------">
+            </div>
+        </div>
+        
+        <button id="confirmUpdateBtn" class="w-full mt-6 px-8 py-3 bg-primary text-on-primary rounded-lg transition-all font-label-bold text-label-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95">
+            Verify & Update Profile
+        </button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../constant.js"></script>
+  <script src="js/globals.js"></script>
+  <script src="Profile.js"></script>
+  <script src="Logout_DeleteAccount.js"></script>
+</body>
+
+</html>

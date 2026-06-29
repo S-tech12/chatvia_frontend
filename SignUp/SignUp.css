@@ -1,0 +1,38 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.neon-glow:hover {
+    box-shadow: 0 0 15px rgba(188, 19, 254, 0.4);
+    filter: brightness(1.1);
+}
+
+.bg-mesh {
+    background-color: #0A0A0C;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(152, 0, 208, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 227, 253, 0.1) 0px, transparent 50%);
+}
+
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

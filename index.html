@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Welcome to Chatvia</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --border-glass: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background-color: #0A0A0C;
+      overflow: hidden;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--border-glass);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .neon-glow-purple {
+      box-shadow: 0 0 30px rgba(188, 19, 254, 0.4);
+    }
+
+    /* Ambient Animation */
+    .ambient-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      z-index: 0;
+      animation: float 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(-10%, -10%) scale(1);
+      }
+
+      100% {
+        transform: translate(10%, 10%) scale(1.1);
+      }
+    }
+
+    .glow-1 {
+      background: #bc13fe;
+      top: -10%;
+      left: -10%;
+      animation-delay: 0s;
+    }
+
+    .glow-2 {
+      background: #00e3fd;
+      bottom: -10%;
+      right: -10%;
+      animation-delay: -5s;
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#ffb4aa",
+            "tertiary": "#ffb4aa",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#9cf0ff",
+            "secondary-container": "#00e3fd",
+            "surface-container": "#201f21",
+            "secondary-fixed-dim": "#00daf3",
+            "surface-bright": "#39393b",
+            "primary-container": "#bc13fe",
+            "tertiary-fixed": "#ffdad5",
+            "surface-tint": "#ebb2ff",
+            "on-primary-fixed-variant": "#74009f",
+            "error": "#ffb4ab",
+            "on-surface-variant": "#d4c0d7",
+            "on-secondary-container": "#00616d",
+            "tertiary-container": "#e62721",
+            "primary-fixed": "#f8d8ff",
+            "on-secondary-fixed": "#001f24",
+            "secondary": "#bdf4ff",
+            "on-primary-fixed": "#320047",
+            "on-surface": "#e5e1e4",
+            "surface-container-high": "#2a2a2c",
+            "surface-variant": "#353437",
+            "outline": "#9d8ba0",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#ebb2ff",
+            "on-tertiary-fixed": "#410001",
+            "inverse-primary": "#9800d0",
+            "on-background": "#e5e1e4",
+            "background": "#131315",
+            "on-tertiary-fixed-variant": "#930005",
+            "surface-container-lowest": "#0e0e10",
+            "inverse-surface": "#e5e1e4",
+            "on-tertiary-container": "#140000",
+            "on-primary-container": "#ffffff",
+            "error-container": "#93000a",
+            "on-tertiary": "#690003",
+            "surface-dim": "#131315",
+            "on-secondary-fixed-variant": "#004f58",
+            "primary": "#ebb2ff",
+            "outline-variant": "#504254",
+            "on-primary": "#520072",
+            "surface": "#131315",
+            "surface-container-highest": "#353437",
+            "on-secondary": "#00363d",
+            "surface-container-low": "#1c1b1d",
+            "inverse-on-surface": "#313032"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "title-sm": ["Outfit"],
+            "label-bold": ["Inter"],
+            "display-lg": ["Outfit"],
+            "body-lg": ["Inter"],
+            "headline-md-mobile": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+
+<body
+  class="bg-background text-on-surface font-body-md antialiased overflow-hidden min-h-screen flex items-center justify-center">
+  <!-- Ambient Background -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <main class="relative z-10 w-full max-w-4xl px-6 py-12 text-center">
+    <!-- Centered Content -->
+    <div class="space-y-12">
+      <!-- Logo -->
+      <div class="flex justify-center items-center gap-3 animate-fade-in">
+        <span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">light_mode</span>
+        <span class="font-display-lg text-headline-md font-bold text-on-surface tracking-tight">Chatvia</span>
+      </div>
+      <!-- Heading Group -->
+      <div class="space-y-6">
+        <h1 class="font-display-lg text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+          Welcome to<br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary-container to-primary">Chatvia
+            Chat</span>
+        </h1>
+        <p class="font-display-lg text-xl md:text-2xl text-on-surface-variant font-medium tracking-wide uppercase">
+          Communication, Redefined in Light
+        </p>
+      </div>
+      <!-- CTA Message -->
+      <div class="pt-8">
+        <div id="redirectMessage" class="text-primary font-label-bold text-xl animate-pulse bg-surface-variant/30 px-8 py-4 rounded-full border border-primary/20 inline-block shadow-lg shadow-primary/10">
+          Redirecting to chatroom in 3 seconds...
+        </div>
+      </div>
+    </div>
+    <!-- Minimal Glass Footer -->
+    <div
+      class="fixed bottom-12 left-1/2 -translate-x-1/2 flex gap-8 items-center glass-card px-8 py-3 rounded-full opacity-60">
+      <a class="text-label-sm hover:text-primary transition-colors" href="#">Privacy</a>
+      <div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+      <a class="text-label-sm hover:text-primary transition-colors" href="#">Terms</a>
+      <div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+      <a class="text-label-sm hover:text-primary transition-colors" href="#">Support</a>
+    </div>
+  </main>
+  <script>
+    // Subtle mouse parallax for the ambient glows
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      const glow1 = document.querySelector('.glow-1');
+      const glow2 = document.querySelector('.glow-2');
+
+      glow1.style.transform = `translate(${x * 50}px, ${y * 50}px)`;
+      glow2.style.transform = `translate(${x * -50}px, ${y * -50}px)`;
+    });
+  </script>
+
+  <script src="constant.js"></script>
+  <script src="start.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
