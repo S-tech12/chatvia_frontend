@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://chatvia-backend.onrender.com";
 
 
 const ROUTE_NAME = {
