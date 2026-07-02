@@ -109,9 +109,11 @@ const startMedia = async (type) => {
 const stopMedia = () => {
     if (localStream) {
         localStream.getTracks().forEach(track => track.stop());
+        localStream = null;
     }
     if (remoteStream) {
         remoteStream.getTracks().forEach(track => track.stop());
+        remoteStream = null;
     }
     const localVideo = document.getElementById('localVideo');
     const remoteVideo = document.getElementById('remoteVideo');
@@ -149,6 +151,11 @@ window.startCall = async (receiverId, type, name, profilePic) => {
         console.error("Failed to start call", e);
     }
 };
+
+// 1.5 Call Initiated (Caller Side receives this)
+socket.on('call-initiated', ({ callId }) => {
+    currentCallId = callId;
+});
 
 // 2. Incoming Call
 socket.on('incoming-call', ({ callerId, callType, callId }) => {
@@ -263,8 +270,12 @@ socket.on('call-ended', () => {
 
 // Helper: End Call
 const endCall = (emitToServer = true) => {
-    if (emitToServer && currentCallId && callReceiverId) {
-        socket.emit('end-call', { callId: currentCallId, otherUserId: callReceiverId });
+    if (emitToServer && callReceiverId) {
+        socket.emit('end-call', { 
+            callId: currentCallId, 
+            otherUserId: callReceiverId,
+            userId: senderId
+        });
     }
     
     stopMedia();
