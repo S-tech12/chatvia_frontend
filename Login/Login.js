@@ -13,6 +13,8 @@ LoginButton.addEventListener('click', async () => {
     }
 
     try {
+        LoginButton.disabled = true;
+        LoginButton.innerHTML = "Logging in...";
         const response = await fetch(`${BASE_URL}${ROUTE_NAME.LOGIN}`, {
             method: 'POST',
             headers: {
@@ -76,7 +78,7 @@ LoginButton.addEventListener('click', async () => {
                         text: 'An error occurred while checking your profile status. Please try again.'
                     });
                 }
-            }, 2000);
+            }, 0);
 
         } else {
             Swal.fire({
@@ -92,6 +94,9 @@ LoginButton.addEventListener('click', async () => {
             title: 'Error',
             text: 'Server Error. Please try again later.'
         });
+    }finally{
+        LoginButton.disabled = false;
+        LoginButton.innerHTML = "Login";
     }
 });
 
