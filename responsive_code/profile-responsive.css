@@ -2,8 +2,8 @@
 @media (max-width: 768px) {
     /* Main container padding */
     main {
-        padding-top: 6rem !important; /* give space for mobile header */
-        padding-bottom: 2rem !important;
+        padding-top: 5rem !important; /* give space for mobile header */
+        padding-bottom: 5rem !important; /* spacing for bottom nav if visible */
     }
     
     .grid-cols-3 {
@@ -11,7 +11,7 @@
     }
 
     .border_glass {
-        padding: 1.5rem !important;
+        padding: 1.5rem 1rem !important;
     }
 
     /* Stack buttons in danger zone */
@@ -20,13 +20,47 @@
         align-items: stretch !important;
     }
     
-    .gap-4 > button {
-        width: 100% !important;
-    }
-
     /* Adjust avatar size slightly */
     .w-32 {
         width: 100px !important;
         height: 100px !important;
     }
+
+    /* Responsive modal adjustments */
+    #profileImageModal > div, #otpVerificationModal > div {
+        padding: 1.5rem 1rem !important;
+        margin: 0.5rem !important;
+        border-radius: 16px !important;
+    }
+    
+    /* Stack DOB/Created details columns if needed */
+    .flex.gap-4 {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
 }
+
+@media (max-width: 480px) {
+    /* Stack buttons inside danger zone */
+    .gap-4 {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    .gap-4 > button {
+        width: 100% !important;
+    }
+}
+
+/* Modals overflow control for short viewports */
+#profileImageModal, #otpVerificationModal {
+    overflow-y: auto !important;
+}
+
+@media (max-height: 520px) {
+    #profileImageModal, #otpVerificationModal {
+        align-items: flex-start !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+

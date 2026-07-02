@@ -107,10 +107,12 @@
 </head>
 
 <body class="bg-background text-on-surface font-body-md selection:bg-primary/30">
-        <!-- Background Orbs -->
-        <div class="floating-orb w-96 h-96 bg-primary-container top-[-10%] left-[-10%]"></div>
-        <div class="floating-orb w-[500px] h-[500px] bg-secondary-container bottom-[-20%] right-[-10%]"
-                style="animation-delay: -5s;"></div>
+        <!-- Background Orbs Wrapper -->
+        <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+                <div class="floating-orb w-96 h-96 bg-primary-container top-[-10%] left-[-10%]"></div>
+                <div class="floating-orb w-[500px] h-[500px] bg-secondary-container bottom-[-20%] right-[-10%]"
+                        style="animation-delay: -5s;"></div>
+        </div>
         <!-- Login Container -->
         <main class="w-full max-w-[440px] px-margin-mobile md:px-0 z-10">
                 <div class="glass-card rounded-[32px] p-8 md:p-10 flex flex-col items-center">

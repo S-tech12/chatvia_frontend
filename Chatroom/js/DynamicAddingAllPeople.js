@@ -113,6 +113,9 @@ function Selection() {
             document.getElementById('secondarySlider').classList.add('hidden');
             document.getElementById('secondarySlider').classList.remove('flex');
 
+            // mark chat room as active on mobile
+            document.body.classList.add('chat-room-open');
+
             const isOnline = onlineUsersSet.has(receiverId);
             const statusText = isOnline ? "Online" : "Offline";
             const statusTextColor = isOnline ? "text-success" : "text-secondary";
@@ -120,7 +123,10 @@ function Selection() {
             // this will change the main content to the chat view
             mainContent.innerHTML = `
 <header class="fixed top-0 w-full md:relative z-50 flex justify-between items-center h-16 px-4 md:px-8 bg-surface/10 backdrop-blur-xl border-b border-outline-variant/20 shadow-none">
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 md:gap-4">
+<button id="chatBackButton" class="md:hidden p-2 text-primary hover:bg-primary/10 rounded-full transition-colors active:scale-95 duration-200 flex items-center justify-center mr-1">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
 <div class="relative">
 <img class="w-10 h-10 rounded-full object-cover" src="${profilePic}"/>
 </div>
@@ -140,11 +146,11 @@ function Selection() {
 <p class="text-center font-bold text-on-surface-variant mt-10">Say hello to start your conversation with ${username} 👋</p>
 </div>
 <footer class="p-4 md:p-6 bg-surface-container-low/80 backdrop-blur-3xl border-t border-outline-variant/10">
-<div class="max-w-5xl mx-auto relative flex items-end gap-3 md:gap-4">
-<div class="flex-1 relative flex items-center bg-surface-variant/30 rounded-2xl p-1.5 glass-border border-primary/10 shadow-inner group focus-within:ring-2 focus-within:ring-primary/40 transition-all">
+<div class="w-full max-w-5xl mx-auto relative flex items-end gap-3 md:gap-4">
+<div class="flex-1 min-w-0 relative flex items-center bg-surface-variant/30 rounded-2xl p-1.5 glass-border border-primary/10 shadow-inner group focus-within:ring-2 focus-within:ring-primary/40 transition-all">
 
 <div class="dropdown">
-    <button class="p-2.5 text-on-surface-variant hover:text-primary transition-colors" id="attachmentBtn" data-bs-toggle="dropdown">
+    <button class="p-2.5 text-on-surface-variant hover:text-primary transition-colors flex items-center" id="attachmentBtn" data-bs-toggle="dropdown" type="button">
         <span class="material-symbols-outlined">add_circle</span>
     </button>
     <ul class="dropdown-menu dropdown-menu-dark bg-surface-container border-outline-variant/20" aria-labelledby="attachmentBtn">
@@ -154,7 +160,8 @@ function Selection() {
     </ul>
 </div>
 
-<input id="messageInput" type="text" class="flex-1 bg-transparent border-none text-body-md text-on-surface focus:ring-0 placeholder:text-on-surface-variant/40 resize-none py-2.5 max-h-32 scrollbar-hide" placeholder="Type a message..." autocomplete="off">
+<input id="messageInput" type="text" class="flex-1 min-w-0 bg-transparent border-none text-body-md text-on-surface focus:ring-0 placeholder:text-on-surface-variant/40 resize-none py-2.5 max-h-32 scrollbar-hide" placeholder="Type a message..." autocomplete="off">
+
 </div>
 <button id="sendBtn" class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container text-white rounded-2xl shadow-xl shadow-primary/30 hover:scale-105 active:scale-95 transition-all">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
@@ -162,10 +169,20 @@ function Selection() {
 </div>
 </footer>
                 `;
-
             const messageInput = document.getElementById("messageInput");
             const sendBtn = document.getElementById("sendBtn");
 
+            // Back button event listener for mobile view
+            const chatBackButton = document.getElementById("chatBackButton");
+            if (chatBackButton) {
+                chatBackButton.addEventListener("click", () => {
+                    document.body.classList.remove("chat-room-open");
+                    document.getElementById("secondarySlider").classList.remove("hidden");
+                    document.getElementById("secondarySlider").classList.add("flex");
+                });
+            }
+
+            // in this sendMessage function is in the SendMessage.js file
             sendBtn.addEventListener("click", sendMessage);
             messageInput.addEventListener("keydown", function (e) {
                 if (e.key === "Enter") {

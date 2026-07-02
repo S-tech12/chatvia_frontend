@@ -1,17 +1,30 @@
 /* responsive_code/signup-responsive.css */
-@media (max-width: 768px) {
+
+/* Handle short viewport heights and general mobile screen paddings */
+@media (max-width: 768px), (max-height: 720px) {
     body {
-        padding: 1rem !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1.5rem 1rem !important;
     }
+}
+
+@media (max-width: 768px) {
     main {
         max-width: 100% !important;
+        width: 100% !important;
     }
     .glass-border {
-        padding: 1.5rem !important;
-        border-radius: 20px !important;
+        padding: 2rem 1.5rem !important;
+        border-radius: 24px !important;
     }
     .floating {
-        opacity: 0.3 !important;
+        opacity: 0.15 !important;
     }
     h1 {
         font-size: 32px !important;
@@ -20,5 +33,36 @@
     /* Make the 2-column grids into 1-column on mobile */
     .grid-cols-2 {
         grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
 }
+
+/* Extra small mobile layout optimizations */
+@media (max-width: 480px) {
+    .glass-border {
+        padding: 1.5rem 1rem !important;
+        border-radius: 16px !important;
+    }
+    .mb-8 {
+        margin-bottom: 1.25rem !important;
+    }
+    form.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: 0.75rem !important;
+        margin-bottom: 0 !important;
+    }
+    button, input {
+        font-size: 14px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    #SignUpButton {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+    footer.mt-8 {
+        margin-top: 1.25rem !important;
+        padding-top: 1rem !important;
+    }
+}
+

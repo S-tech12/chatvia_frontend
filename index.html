@@ -150,8 +150,10 @@
 <body
   class="bg-background text-on-surface font-body-md antialiased overflow-hidden min-h-screen flex items-center justify-center">
   <!-- Ambient Background -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+  </div>
   <main class="relative z-10 w-full max-w-4xl px-6 py-12 text-center">
     <!-- Centered Content -->
     <div class="space-y-12">
@@ -162,26 +164,26 @@
       </div>
       <!-- Heading Group -->
       <div class="space-y-6">
-        <h1 class="font-display-lg text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+        <h1 class="font-display-lg text-4xl md:text-7xl font-bold tracking-tight leading-tight">
           Welcome to<br />
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary-container to-primary">Chatvia
             Chat</span>
         </h1>
-        <p class="font-display-lg text-xl md:text-2xl text-on-surface-variant font-medium tracking-wide uppercase">
+        <p class="font-display-lg text-lg md:text-2xl text-on-surface-variant font-medium tracking-wide uppercase">
           Communication, Redefined in Light
         </p>
       </div>
       <!-- CTA Message -->
       <div class="pt-8">
-        <div id="redirectMessage" class="text-primary font-label-bold text-xl animate-pulse bg-surface-variant/30 px-8 py-4 rounded-full border border-primary/20 inline-block shadow-lg shadow-primary/10">
+        <div id="redirectMessage" class="text-primary font-label-bold text-lg md:text-xl animate-pulse bg-surface-variant/30 px-6 md:px-8 py-3 md:py-4 rounded-full border border-primary/20 inline-block shadow-lg shadow-primary/10">
           Redirecting to chatroom in 3 seconds...
         </div>
       </div>
     </div>
     <!-- Minimal Glass Footer -->
     <div
-      class="fixed bottom-12 left-1/2 -translate-x-1/2 flex gap-8 items-center glass-card px-8 py-3 rounded-full opacity-60">
+      class="fixed bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-4 md:gap-8 items-center glass-card px-4 md:px-8 py-2 md:py-3 rounded-full opacity-60 whitespace-nowrap">
       <a class="text-label-sm hover:text-primary transition-colors" href="#">Privacy</a>
       <div class="w-1 h-1 rounded-full bg-outline-variant"></div>
       <a class="text-label-sm hover:text-primary transition-colors" href="#">Terms</a>
